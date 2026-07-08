@@ -173,5 +173,5 @@ last_list = data.frame(lapply(last_list, unlist))
 #View(last_list)
 
 
-#write.table (last_list, txt_file,row.names = FALSE,col.names =FALSE,quote = FALSE) 
+write.table (last_list, txt_file,row.names = FALSE,col.names =FALSE,quote = FALSE) 
 }
