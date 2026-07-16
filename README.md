@@ -4,7 +4,7 @@ Remove the possible contaminants and lateral gene transfers (LGTs) pollutions in
 
 Introduction
 
-    These files are coding by R language. Please open them with RStudio.
+    These files are coding by R language. If you want to use these tool, please download Tree-pollution-removal file, Please open them with RStudio and change the path to your own path.
 
     boostrap_t100.R and boostrap_b1000.R are the tools to find the possible LGT pollutions among the eukaryote sequences.
 
