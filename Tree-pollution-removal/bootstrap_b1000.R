@@ -8,7 +8,7 @@ library(writexl)
 library(stringr)
 
 # Please put current directory on the next line
-input_path_0 <- "D:Tree-pollution-remove"
+input_path_0 <- "D:/Tree-pollution-removal"
 input_path <- file.path(input_path_0, "b1000")
 output_path <- file.path(input_path_0, "last")
 
