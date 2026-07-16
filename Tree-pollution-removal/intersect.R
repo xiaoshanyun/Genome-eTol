@@ -6,7 +6,7 @@ library(writexl)
 library(stringr)
 
 # Please put current directory on the next line
-input_path_0 <- "E:/stage6/iqtree-redo/0/test-dataset"
+input_path_0 <- "D:/Tree-pollution-removal"
 input_path <- file.path(input_path_0, "last")
 output_path_1 <- file.path(input_path, "continue")
 output_path_2 <- file.path(input_path, "select")
