@@ -1,12 +1,24 @@
 #------------------------------------------------------------------------------------------------------------
-#First part: Import packages and read Newick files
+#First part: Import packages and read Newick filesoutput_path <- file.path(input_path_0, "last")
+
 library(ape)
 library(treeio)
 library(ggtree)
 library(writexl)
 library(stringr)
-input_path <- "E:/stage6/iqtree-redo/7/7-tre-b1000/1"
-output_path <- "E:/stage6/bac/GCA_001872725/last"
+
+# Please put current directory on the next line
+input_path_0 <- "E:/stage6/iqtree-redo/0/test-dataset"
+input_path <- file.path(input_path_0, "b1000")
+output_path <- file.path(input_path_0, "last")
+
+if (!dir.exists(output_path)) {
+  dir.create(output_path)
+  dir.create(output_path_1)
+  dir.create(output_path_2)
+}
+output_path_1 <- file.path(output_path, "continue")
+output_path_2 <- file.path(output_path, "select")
 tre_files <- list.files(path = input_path, pattern = "\\.tre$", full.names = TRUE)
 
 for (file in tre_files){
@@ -129,23 +141,16 @@ for (file in tre_files){
   #Forth part: find the bacterial or archaea IDs near mito IDs
   df_bac <- df_end[df_end[, 6] =="bac", ]
   df_GCA <- df_end[df_end[, 6] =="GCA", ]
-  View(df_end)
-  View(df_bac)
-  View(df_GCA)
-  View(tree_trim)
   up_node_pool = data.frame()
   up_node = data.frame()
   down_node = data.frame()
   GCA_all = data.frame()
   for (i in 1:nrow(df_bac)){
     id = as.numeric(df_bac[i,1])
-    print(id)
     up_node_pool <- tree_trim[tree_trim[, 2] ==id, ]
     down_node_pool <- tree_trim[tree_trim[,1] ==id, ]
     down_node <- down_node_pool[down_node_pool[, 6] =="GCA", ]
-    print(up_node_pool)
-    print(down_node_pool)
-    print(down_node)
+
     for (j in 1:nrow(up_node_pool)){
       id2 = as.numeric(up_node_pool[j,1])
       up_node <- df_GCA[df_GCA[, 1] ==id2, ]
@@ -156,8 +161,6 @@ for (file in tre_files){
   GCA_all <- na.omit(GCA_all)
   GCA_list1 = GCA_all[,4]    
   GCA_list <- GCA_list1[!duplicated(GCA_list1$label),]
-  View(GCA_list)
-  break
   #------------------------------------------------------------------------------------------------------------
   last_list2 <- rbind(bootstrap_list,distance_list)
   last_list1 <- rbind(last_list2,GCA_list)
