@@ -5,10 +5,20 @@ library(treeio)
 library(ggtree)
 library(writexl)
 library(stringr)
-input_path <- "E:/stage6/bac/GCA_001872725/t100"
-output_path <- "E:/stage6/bac/GCA_001872725/last"
-tre_files <- list.files(path = input_path, pattern = "\\.tre$", full.names = TRUE)
 
+# Please put current directory on the next line
+input_path_0 <- "E:/stage6/iqtree-redo/0/test-dataset"
+input_path <- file.path(input_path_0, "t100")
+output_path <- file.path(input_path_0, "last")
+
+if (!dir.exists(output_path)) {
+  dir.create(output_path)
+  dir.create(output_path_1)
+  dir.create(output_path_2)
+}
+output_path_1 <- file.path(output_path, "continue")
+output_path_2 <- file.path(output_path, "select")
+tre_files <- list.files(path = input_path, pattern = "\\.tre$", full.names = TRUE)
 
 for (file in tre_files){
   tree <- read.tree(file)
@@ -126,14 +136,9 @@ colnames(distance_list) <- c("label")
 #Forth part: t100 tree exists more than 2 branches at one node, this part can find the branches only has bacterial or archaea from these nodes.
 node_count <- data.frame()
 node_count <- as.data.frame(table(tree_trim$parent))
-print(node_count)
 node_count <- node_count[node_count[, 2] >=3, ]
-print(node_count)
 node_count <- droplevels(node_count)
-print(node_count)
-print(node_count$Var1)
 node_GCA <- tree_trim[tree_trim$parent %in% node_count$Var1, ]
-print(node_GCA)
 node_GCA_pool <- rbind(df_end, node_GCA)
 
 GCA_final_pool <- data.frame()
@@ -162,8 +167,6 @@ for (i in 1:nrow(node_GCA)){
     }
   }}
 GCA_list = GCA_final_pool[, 4]
-print(GCA_list)
-break
 #------------------------------------------------------------------------------------------------------------
 
 last_list2 <- rbind(bootstrap_list,distance_list)
