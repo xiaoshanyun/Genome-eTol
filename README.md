@@ -9,13 +9,17 @@ Marker_sequences_selection | Select orthologs from genomic amino acid sequences 
 Below shows the flow charts of four parts:
 
 Similarity_order:
+
 ![image](https://github.com/xiaoshanyun/Genome-eTol/blob/main/Similarity_order/Similarity_order.tiff)
 
 Genome_sequences_extract:
+
 ![image](https://github.com/xiaoshanyun/Genome-eTol/blob/main/Genome_sequences_extract/Genome_sequences_extract.tiff)
 
 Genome_sequences_family_selection:
+
 ![image](https://github.com/xiaoshanyun/Genome-eTol/blob/main/Genome_sequences_family_selection/Genome_sequences_family_selection.tiff)
 
 Marker_sequences_selection:
+
 ![image](https://github.com/xiaoshanyun/Genome-eTol/blob/main/Marker_sequences_selection/Marker_sequences_selection.tiff)
