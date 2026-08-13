@@ -1,20 +1,17 @@
-Remove the possible contaminants and lateral gene transfers (LGTs) pollutions in phylogenetic trees.
+Genome-eTol is a software package, written in Python2, Python3 and R language, that contains the whole process to build an eTol with marker genomic sequences which include best species selection among taxa, marker genomic sequences identification and selection, orthologs selection and final eTol built. This software package aids in the construction of genomic sequence-based phylogenomic datasets. In addition, Genome-eTol currently includes a manually curated starting dataset of 100 genomic sequences families from all eukaryotic highest taxa in NCBI category representing the full breadth of known diversity in the eukaryotic tree of life. The combination of all of the foregoing features makes Genome-eTol a broadly-useful, user-friendly software tool for sophisticated phylogenomic analyses of eukaryotes.
 
-========================
+Genome-eTol is constructed by four main parts:
+Similarity_order | Score the similarity between alphaproteobacterial genome and eukaryote genome
+Genome_sequences_extract | Extract amino acid sequences from genome
+Genome_sequences_family_selection | Select suitable amino acid sequences families
+Marker_sequences_selection | Select orthologs from genomic amino acid sequences families
 
-Introduction
+Below shows the flow charts of four parts:
 
-    These files are coding by R language. If you want to use these tool, please download Tree-pollution-removal file, Please open them with RStudio and change the path to your own path.
+Similarity_order:
 
-    boostrap_t100.R and boostrap_b1000.R are the tools to find the possible LGT pollutions among the eukaryote sequences.
+Genome_sequences_extract:
 
-    They contains three functions. 
-    1. Find the eukaryote sequences branched strongly (more than 95% UFBOOT2, more than 85% true bootstrap support) with archaeal or baterial (except alphaproteobacteria) clades.
-    2. Find the eukaryote sequences which are separated from them by very short branch lengths (<0.22).
-    3. Find the meaningless archaeal or baterial (except alphaproteobacteria) clades.
-    Results will be in "last".
+Genome_sequences_family_selection:
 
-    intersect.R is the tool to get the intersection between the results from boostrap_t100.R and boostrap_b1000.R.
-    intersect.R's result will be in "last/intersect" or "last/select".
-    If exists possible LGT pollution in both b1000 and t100 trees with same taxon, the result will be in "last/intersect".
-    Else, the result will be in "last/select".
+Marker_sequences_selection:
