@@ -19,5 +19,5 @@ Flow charts
 * ##### Genome_sequences_family_selection:
 <img src="https://github.com/xiaoshanyun/Genome-eTol/blob/main/Genome_sequences_family_selection/Genome_sequences_family_selection.tiff" width="220px">
 
-* ##### * Marker_sequences_selection:
+* ##### Marker_sequences_selection:
 <img src="https://github.com/xiaoshanyun/Genome-eTol/blob/main/Marker_sequences_selection/Marker_sequences_selection.tiff" width="370px">
