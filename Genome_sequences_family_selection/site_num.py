@@ -1,9 +1,8 @@
 import os
 import pandas as pd
 from tqdm import tqdm
-import numpy as np
 import openpyxl
-from openpyxl.utils.dataframe import dataframe_to_rows
+
 
 def process_excel(fpath1,fpath2):
     df1 = pd.read_excel(fpath1, header=0)
