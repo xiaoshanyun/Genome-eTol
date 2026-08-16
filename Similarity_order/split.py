@@ -30,7 +30,6 @@ def process_excel_files():
             os.makedirs(output_dir, exist_ok=True)
 
             grouped = df.groupby('d9')
-            # print(f"发现组合数：{len(grouped)}")
 
             file_counter = 1
             for _, group in grouped:
@@ -39,7 +38,6 @@ def process_excel_files():
 
                 try:
                     group_data.to_excel(output_file, index=False)
-                    # print(f"写入：{output_file}（{len(group_data)} 行）")
                     file_counter += 1
                 except Exception as e:
                     print(f"写入失败：{output_file}")
