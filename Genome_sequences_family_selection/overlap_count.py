@@ -1,9 +1,8 @@
 import os
 import pandas as pd
 from tqdm import tqdm
-import numpy as np
 import openpyxl
-from openpyxl.utils.dataframe import dataframe_to_rows
+
 
 def check_overlap(intervals):
     """简易重叠检测：只要任意两区间相交即返回 True"""
@@ -32,7 +31,6 @@ def process_excel(path):
         site_y = []
         i = 0
         i_num = len(site) - 1 
-        #print(i_num)
         k = []
         while i <= i_num:
             site_z = []
@@ -108,10 +106,8 @@ def main():
     name_files = [f for f in os.listdir(name_path) if f.endswith(('.xlsx', '.xls')) and f != 'score.xlsx' and f!= 'overlap protocal.xlsx']
     for folder_name in tqdm(name_files, desc="处理 Excel 文件"):
         combined_name = "split_split_" + folder_name.split(".xlsx", 1)[0] + "_合并结果"
-        print(combined_name)
         base_dir  = "./split-2"
         folder_path = os.path.join(base_dir, combined_name)
-        print(folder_path)
         files = [f for f in os.listdir(folder_path) if f.endswith("_1.xlsx") and not f.startswith("~$")]
 
         for fname in tqdm(files, leave=False, ncols=100):
@@ -122,7 +118,6 @@ def main():
                 v1 = process_excel(fpath)
                 v1.drop_duplicates(keep='first',inplace=True)
                 v1.dropna(axis=0,how="all",inplace=True)
-                #print(v1)
                 v1.to_excel(result, index=False, header=False)
                 print(f"\n已保存到: {result}\n")
             except Exception as e:
