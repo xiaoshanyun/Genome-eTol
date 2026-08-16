@@ -29,12 +29,6 @@ for filename in tqdm(coord_files, desc="Processing .coord files"):
 
     df = pd.DataFrame(data)
 
-
-    # print(f"\n{filename}")
-    # print("各行字段数量统计：")
-    # print(pd.Series([len(row) for row in data]).value_counts())
-    # print("DataFrame 总列数：", df.shape[1])
-
     if df.shape[1] >= 11:
         if df.shape[1] == 14:
             df.drop(columns=[13], inplace=True)
