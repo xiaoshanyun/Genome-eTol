@@ -29,19 +29,11 @@ def compute_adjusted_scores_sweepline(df):
             seg_len = pos - prev_pos
             #s=[]
             if len(active) >= 1:
-                #for i, (s, e, sim, idy) in ac:
-                    # h=len(ac)
-                    #length = max(s,e)-min(s,e)
-                    #idy = df.iloc[i]['IDY']
-                    #overlap_score_sim += 1/h * length * sim
-                    #overlap_score_idy += 1/h * length * idy
-            #return overlap_score_sim, overlap_score_idy
                 sims = [intervals[i][2] for i in active]
                 idys = [intervals[i][3] for i in active]
                 weight_sim = sum(sims)
                 weight_idy = sum(idys)
                 s=0.5*len(events)
-            #m = [max(i) for i in active]
                 overlap_score_sim += 1/s*weight_sim * seg_len
                 overlap_score_idy += 1/s*weight_idy * seg_len
             else:
