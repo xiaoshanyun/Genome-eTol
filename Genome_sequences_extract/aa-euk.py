@@ -1,6 +1,4 @@
-import os
 from pathlib import Path
-import re
 from datetime import datetime
 from Bio import SeqIO
 
@@ -8,7 +6,6 @@ SEQ_DIR = Path("seq-euk")
 AA_DIR = Path("aa-euk")
 LOG_PATH = Path("aa_euk_extraction.log")  
 
-#SEQ_DIR = [f for f in os.listdir(folder_path) if f.endswith('.seq')]
 
 AA_DIR.mkdir(exist_ok=True)
 
@@ -47,7 +44,6 @@ def process_seq_file(seq_path: Path):
                 f_out.write(aa_4 + "\n")
                 f_out.write(aa_5 + "\n")
                 f_out.write(aa_6 + "\n")
-    #SeqIO.write(record, "output.fasta", "fasta")
 
 
 def main():
