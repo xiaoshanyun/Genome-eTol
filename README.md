@@ -25,7 +25,7 @@ Flow charts
 
 
 ## Command line options
-Test you can run Genome-eTol: `python Genome-eTol.py -h`
+Test you can run Genome-eTol: `python Genome-eTol.py -h` or  `python Genome-eTol.py --help`
 
 ### Options for getting amino acid sequences from genome sequences
 
