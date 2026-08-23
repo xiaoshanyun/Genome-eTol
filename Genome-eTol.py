@@ -5,4 +5,4 @@ from scripts.__main__ import main
 if __name__ == "__main__":
     args = sys.argv[1:]
     main()
-    print("last-end")
+    print("Task finished")
