@@ -22,12 +22,12 @@ def process_seq_file(seq_path: Path, AA_DIR:Path):
     with seq_path.open("r", encoding="utf-8") as f:
         for record in SeqIO.parse(f, "fasta"):
             rrdna = record.seq.reverse_complement()
-            aa_1 = str('>'+record.id+'-1\n'+record.seq[0:].translate())
-            aa_2 = str('>'+record.id+'-2\n'+record.seq[1:].translate())
-            aa_3 = str('>'+record.id+'-3\n'+record.seq[2:].translate())
-            aa_4 = str('>'+record.id+'-4\n'+rrdna[0:].translate())
-            aa_5 = str('>'+record.id+'-5\n'+rrdna[1:].translate())
-            aa_6 = str('>'+record.id+'-6\n'+rrdna[2:].translate())
+            aa_1 = str('>'+record.id+'-1\n'+record.seq[0:].translate().replace('*', 'B'))
+            aa_2 = str('>'+record.id+'-2\n'+record.seq[1:].translate().replace('*', 'B'))
+            aa_3 = str('>'+record.id+'-3\n'+record.seq[2:].translate().replace('*', 'B'))
+            aa_4 = str('>'+record.id+'-4\n'+rrdna[0:].translate().replace('*', 'B'))
+            aa_5 = str('>'+record.id+'-5\n'+rrdna[1:].translate().replace('*', 'B'))
+            aa_6 = str('>'+record.id+'-6\n'+rrdna[2:].translate().replace('*', 'B'))
             outputs.append((aa_1,aa_2,aa_3,aa_4,aa_5,aa_6))
             
     if outputs:
