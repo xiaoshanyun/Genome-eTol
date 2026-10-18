@@ -2,14 +2,14 @@ Genome-eToL
 ============
 ## Introduction
 ### Why use Genome-eToL?
-Thanks to the large amount of identified mitochondrial marker proteins and new developed phylogenetic models, the eukaryote Tree of Life (eToL) can dissect the relationship among all known eukaryotic supergroups. Meantime protein eToL faces major challenges to limited sampling and LECA’s ancestral state reconstruction. Also, there is a need to develop more scientific guidance to select most ancestral taxa in each group. Moreover, rather than analyzing evolve distance with other evidence (fossils, phenotypes etc.) in protein eToL only, one more intuitive method especially genomic method is required to adequately build the eukaryotic genome evolution timeline.
+Thanks to the large amount of identified mitochondrial marker proteins and new developed phylogenetic models, the eukaryote Tree of Life (eToL) can dissect the relationship among all known eukaryotic supergroups. Meantime protein eToL faces major challenges to limited sampling and the Last Eukaryotic Common Ancestor (LECA)’s ancestral state reconstruction. Also, there is a need to develop more scientific guidance to select most ancestral taxa in each group. Moreover, rather than analyzing evolve distance with other evidence (fossils, phenotypes etc.) in protein eToL only, one more straightforward method especially genomic method is required to adequately build the eukaryotic genome evolution timeline.
 &nbsp;
 ### Main features:  
 * **Full sampling:** Only genome sequences are needed to evaluate genomic similarity to LECA.
 * **Genome similarity evaluation:** A scoring procedure to estimate the genomic similarity to LECA.
 * **Most LECA genomic similar taxa selection:** Supporting most genomic similar taxa selection by ranking genomic similarity in their groups.
 * **Probable contaminants or LGTs removal:** An R to remove probable contaminants or LGTs to Archaea and bacteria except alphaproteobacteria.
-* **Similar genomic sequences extraction:** Based on given site file, it supports similar genomic sequences extraction from genomes.
+* **Similar genomic sequences extraction:** Based on given site file, it supports similar genomic sequences extraction from genomes.   
 &nbsp;
 ## Command-line options
 Test you can run Genome-eTol: `python Genome-eTol.py -h` or  `python Genome-eTol.py --help`
