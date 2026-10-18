@@ -2,7 +2,7 @@ Genome-eToL
 ============
 ## Introduction
 ### Why use Genome-eToL?
-Thanks to the large amount of identified mitochondrial marker proteins and new developed phylogenetic models, the eukaryote Tree of Life (eToL) can dissect the relationship among all known eukaryotic supergroups. Meantime protein eToL faces major challenges to limited sampling and the Last Eukaryotic Common Ancestor (LECA)’s ancestral state reconstruction. Also, there is a need to develop more scientific guidance to select most ancestral taxa in each group. Moreover, rather than analyzing evolve distance with other evidence (fossils, phenotypes etc.) in protein eToL only, one more straightforward method especially genomic method is required to adequately build the eukaryotic genome evolution timeline.
+Thanks to the large amount of identified mitochondrial marker proteins and new developed phylogenetic models, the eukaryote Tree of Life (eToL) can dissect the relationship among all known eukaryotic supergroups. Meantime protein eToL faces major challenges to limited sampling and the ancestral state reconstruction of the Last Eukaryotic Common Ancestor (LECA). Also, there is a need to develop more scientific guidance to select most ancestral taxa in each group. Moreover, rather than analyzing evolve distance with other evidence (fossils, phenotypes etc.) in protein eToL only, one more straightforward method especially genomic method is required to adequately build the eukaryotic genome evolution timeline.
 &nbsp;
 ### Main features:  
 * **Full sampling:** Only genome sequences are needed to evaluate genomic similarity to LECA.
